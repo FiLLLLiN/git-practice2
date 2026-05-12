@@ -188,6 +188,7 @@ user.email=student@mail.com
 
 ---
 
+<<<<<<< HEAD
 ## 5. Создание локального репозитория
 
 Локальный репозиторий — это репозиторий, который хранится на компьютере пользователя. В нем находятся файлы проекта и служебная папка `.git`, где Git хранит историю изменений.
@@ -196,11 +197,24 @@ user.email=student@mail.com
 
 ```bash
 mkdir git-instruction
+=======
+## 8. Работа с удаленным репозиторием
+
+Удаленный репозиторий — это репозиторий, который хранится на сервере, например на GitHub.
+
+Удаленный репозиторий нужен для того, чтобы хранить проект в интернете, загружать изменения, получать изменения с других устройств и организовывать совместную работу.
+
+### Добавление удаленного репозитория
+
+```bash
+git remote add origin https://github.com/username/git-instruction.git
+>>>>>>> global
 ```
 
 Пример:
 
 ```bash
+<<<<<<< HEAD
 mkdir my-project
 ```
 
@@ -224,11 +238,26 @@ cd my-project
 
 ```bash
 git init
+=======
+git remote add origin https://github.com/student/git-instruction.git
+```
+
+Здесь:
+
+- `origin` — стандартное имя удаленного репозитория;
+- ссылка — адрес репозитория на GitHub.
+
+### Проверка подключенного удаленного репозитория
+
+```bash
+git remote -v
+>>>>>>> global
 ```
 
 Пример результата:
 
 ```bash
+<<<<<<< HEAD
 Initialized empty Git repository in C:/Users/User/git-instruction/.git/
 ```
 
@@ -262,11 +291,24 @@ nothing to commit
 
 ```bash
 echo "# Инструкция по Git" > README.md
+=======
+origin  https://github.com/student/git-instruction.git (fetch)
+origin  https://github.com/student/git-instruction.git (push)
+```
+
+Команда показывает список удаленных репозиториев.
+
+### Отправка основной ветки на GitHub
+
+```bash
+git push -u origin main
+>>>>>>> global
 ```
 
 Пример:
 
 ```bash
+<<<<<<< HEAD
 echo "# Мой проект" > README.md
 ```
 
@@ -452,11 +494,21 @@ git checkout main
 
 ```bash
 git checkout main
+=======
+git push -u origin main
+```
+
+Параметр `-u` связывает локальную ветку с удаленной. После этого для следующих отправок можно использовать просто:
+
+```bash
+git push
+>>>>>>> global
 ```
 
 Если основная ветка называется `master`, используется команда:
 
 ```bash
+<<<<<<< HEAD
 git checkout master
 ```
 
@@ -464,16 +516,575 @@ git checkout master
 
 ```bash
 git branch
+=======
+git push -u origin master
+```
+
+### Отправка ветки local
+
+```bash
+git checkout local
+git push -u origin local
+```
+
+Пример:
+
+```bash
+git checkout local
+git push -u origin local
+```
+
+### Отправка ветки global
+
+```bash
+git checkout global
+git push -u origin global
+```
+
+Пример:
+
+```bash
+git checkout global
+git push -u origin global
+```
+
+### Получение изменений из удаленного репозитория
+
+```bash
+git pull
+```
+
+Пример:
+
+```bash
+git pull origin main
+```
+
+Команда `git pull` загружает изменения из удаленного репозитория и объединяет их с текущей веткой.
+
+### Загрузка изменений без автоматического слияния
+
+```bash
+git fetch
+```
+
+Пример:
+
+```bash
+git fetch origin
+```
+
+Команда `git fetch` загружает информацию об изменениях из удаленного репозитория, но не объединяет их автоматически с текущими файлами.
+
+### Клонирование репозитория
+
+```bash
+git clone https://github.com/username/git-instruction.git
+```
+
+Пример:
+
+```bash
+git clone https://github.com/student/git-instruction.git
+```
+
+Команда `git clone` скачивает удаленный репозиторий на компьютер.
+
+---
+
+## 9. Работа с форками
+
+Форк — это копия чужого репозитория, созданная в своем аккаунте GitHub. Форки используются для внесения изменений в чужой проект без прямого доступа к оригинальному репозиторию.
+
+### Для чего нужен форк
+
+Форк позволяет:
+
+- скопировать чужой проект в свой аккаунт;
+- внести изменения в своей копии;
+- отправить предложение изменений автору оригинального проекта;
+- безопасно работать с проектом, не изменяя исходный репозиторий.
+
+### Создание форка
+
+Для создания форка необходимо:
+
+1. Открыть чужой репозиторий на GitHub.
+2. Нажать кнопку **Fork**.
+3. Выбрать свой аккаунт.
+4. Дождаться создания копии репозитория.
+
+После этого в аккаунте появится копия проекта.
+
+### Клонирование форка
+
+```bash
+git clone https://github.com/username/project.git
+```
+
+Пример:
+
+```bash
+git clone https://github.com/student/example-project.git
+```
+
+### Переход в папку проекта
+
+```bash
+cd example-project
+```
+
+Пример:
+
+```bash
+cd example-project
+```
+
+### Добавление оригинального репозитория
+
+Оригинальный репозиторий обычно добавляют под именем `upstream`.
+
+```bash
+git remote add upstream https://github.com/original-author/project.git
+```
+
+Пример:
+
+```bash
+git remote add upstream https://github.com/original/example-project.git
+```
+
+### Проверка удаленных репозиториев
+
+```bash
+git remote -v
+>>>>>>> global
 ```
 
 Пример результата:
 
 ```bash
+<<<<<<< HEAD
   global
   local
 * main
 ```
 
 В данном примере текущей активной веткой является `main`.
+=======
+origin    https://github.com/student/example-project.git (fetch)
+origin    https://github.com/student/example-project.git (push)
+upstream  https://github.com/original/example-project.git (fetch)
+upstream  https://github.com/original/example-project.git (push)
+```
+
+Здесь:
+
+- `origin` — личная копия репозитория;
+- `upstream` — оригинальный репозиторий.
+
+### Получение изменений из оригинального репозитория
+
+```bash
+git fetch upstream
+```
+
+Пример:
+
+```bash
+git fetch upstream
+```
+
+### Обновление своей ветки main
+
+```bash
+git checkout main
+git merge upstream/main
+```
+
+Пример:
+
+```bash
+git checkout main
+git merge upstream/main
+```
+
+Эти команды позволяют обновить свою копию проекта изменениями из оригинального репозитория.
+
+### Создание Pull Request
+
+После внесения изменений в форк их можно предложить автору оригинального проекта.
+
+Общий порядок:
+
+1. Внести изменения в своей копии проекта.
+2. Создать коммит.
+3. Отправить изменения в свой репозиторий.
+4. Открыть GitHub.
+5. Нажать кнопку **Compare & pull request**.
+6. Описать изменения.
+7. Отправить Pull Request.
+
+Пример команд:
+
+```bash
+git add .
+git commit -m "Исправлена документация"
+git push origin main
+```
+
+После этого изменения будут доступны в форке на GitHub.
+>>>>>>> global
 
 ---
+
+## 10. Слияние веток
+
+По заданию итоговый вариант работы должен быть результатом слияния всех веток в основную ветку `main` или `master`.
+
+В данной работе используются ветки:
+
+```bash
+main
+local
+global
+```
+
+Ветка `main` содержит основную структуру документа, описание создания учетной записи GitHub и установку Git.
+
+Ветка `local` содержит описание команд для локальной работы с Git.
+
+Ветка `global` содержит описание работы с удаленным репозиторием и форками.
+
+### Переход в основную ветку
+
+```bash
+git checkout main
+```
+
+Пример:
+
+```bash
+git checkout main
+```
+
+### Слияние ветки local
+
+```bash
+git merge local
+```
+
+Пример результата:
+
+```bash
+Updating a1b2c3d..d4e5f6g
+Fast-forward
+ README.md | 50 +++++++++++++++++++++++++++++++++
+```
+
+После выполнения команды изменения из ветки `local` попадают в основную ветку.
+
+### Слияние ветки global
+
+```bash
+git merge global
+```
+
+Пример:
+
+```bash
+git merge global
+```
+
+После выполнения команды изменения из ветки `global` также попадают в основную ветку.
+
+### Проверка истории после слияния
+
+```bash
+git log --oneline --graph --all
+```
+
+Пример результата:
+
+```bash
+*   9f8e7d6 Merge branch 'global'
+|\
+| * 7a6b5c4 Добавлено описание удаленного Git и форков
+* |   5d4c3b2 Merge branch 'local'
+|\ \
+| * | 3c2b1a0 Добавлены команды локального Git
+| |/
+* / 1a2b3c4 Создана структура документа
+```
+
+Команда показывает историю коммитов в виде графа.
+
+---
+
+## 11. Порядок выполнения практической работы
+
+Ниже приведен общий порядок выполнения практической работы.
+
+### Шаг 1. Создание папки проекта
+
+```bash
+mkdir git-instruction
+cd git-instruction
+```
+
+### Шаг 2. Инициализация Git-репозитория
+
+```bash
+git init
+```
+
+### Шаг 3. Создание файла README.md
+
+```bash
+echo "# Инструкция по работе с Git и GitHub" > README.md
+```
+
+### Шаг 4. Добавление файла в индекс
+
+```bash
+git add README.md
+```
+
+### Шаг 5. Создание первого коммита
+
+```bash
+git commit -m "main: создана структура README, описаны GitHub и установка Git"
+```
+
+### Шаг 6. Создание ветки local
+
+```bash
+git checkout -b local
+```
+
+В ветке `local` были добавлены разделы, связанные с локальной работой Git.
+
+После внесения изменений был выполнен коммит:
+
+```bash
+git add README.md
+git commit -m "local: добавлены команды локального Git"
+```
+
+### Шаг 7. Создание ветки global
+
+Сначала был выполнен возврат в основную ветку:
+
+```bash
+git checkout main
+```
+
+Затем была создана ветка `global`:
+
+```bash
+git checkout -b global
+```
+
+В ветке `global` были добавлены разделы, связанные с удаленным репозиторием и форками.
+
+После внесения изменений был выполнен коммит:
+
+```bash
+git add README.md
+git commit -m "global: добавлена работа с удаленным Git и форками"
+```
+
+### Шаг 8. Слияние веток
+
+Для получения итогового варианта был выполнен возврат в основную ветку:
+
+```bash
+git checkout main
+```
+
+Затем были объединены ветки `local` и `global`:
+
+```bash
+git merge local
+git merge global
+```
+
+### Шаг 9. Проверка истории
+
+```bash
+git log --oneline --graph --all
+```
+
+### Шаг 10. Подключение удаленного репозитория
+
+```bash
+git remote add origin https://github.com/username/git-instruction.git
+```
+
+Пример:
+
+```bash
+git remote add origin https://github.com/student/git-instruction.git
+```
+
+### Шаг 11. Отправка результата на GitHub
+
+```bash
+git push -u origin main
+```
+
+Если основная ветка называется `master`, используется команда:
+
+```bash
+git push -u origin master
+```
+
+### Шаг 12. Отправка дополнительных веток
+
+```bash
+git push -u origin local
+git push -u origin global
+```
+
+В результате на удаленном репозитории GitHub находятся все созданные ветки и итоговый вариант работы в ветке `main`.
+
+---
+
+## 12. Частые ошибки
+
+### Ошибка: pathspec 'main' did not match any file
+
+Пример ошибки:
+
+```bash
+error: pathspec 'main' did not match any file(s) known to git
+```
+
+Причина ошибки: ветка `main` не существует. Возможно, основная ветка называется `master`.
+
+Проверить список веток можно командой:
+
+```bash
+git branch
+```
+
+Если существует ветка `master`, нужно перейти в нее:
+
+```bash
+git checkout master
+```
+
+### Ошибка: nothing to commit
+
+Пример:
+
+```bash
+nothing to commit, working tree clean
+```
+
+Это означает, что в проекте нет новых изменений для сохранения.
+
+Проверить состояние можно командой:
+
+```bash
+git status
+```
+
+### Ошибка: remote origin already exists
+
+Пример:
+
+```bash
+error: remote origin already exists
+```
+
+Причина ошибки: удаленный репозиторий `origin` уже добавлен.
+
+Проверить удаленный репозиторий можно командой:
+
+```bash
+git remote -v
+```
+
+Если нужно заменить ссылку, используется команда:
+
+```bash
+git remote set-url origin https://github.com/username/new-repository.git
+```
+
+Пример:
+
+```bash
+git remote set-url origin https://github.com/student/git-instruction.git
+```
+
+### Ошибка при слиянии веток
+
+Пример:
+
+```bash
+CONFLICT (content): Merge conflict in README.md
+```
+
+Такая ошибка возникает, если в разных ветках были изменены одни и те же строки файла.
+
+Для исправления необходимо:
+
+1. Открыть файл с конфликтом.
+2. Найти конфликтующие строки.
+3. Вручную оставить правильный вариант.
+4. Сохранить файл.
+5. Добавить исправленный файл в индекс:
+
+```bash
+git add README.md
+```
+
+6. Создать коммит:
+
+```bash
+git commit -m "Исправлен конфликт слияния"
+```
+
+---
+
+## 13. Краткая таблица команд
+
+| Команда | Назначение | Пример |
+|---|---|---|
+| `git --version` | Проверить версию Git | `git --version` |
+| `git config --global user.name` | Задать имя пользователя | `git config --global user.name "Student"` |
+| `git config --global user.email` | Задать почту пользователя | `git config --global user.email "student@mail.com"` |
+| `git config --list` | Посмотреть настройки Git | `git config --list` |
+| `git init` | Создать локальный репозиторий | `git init` |
+| `git status` | Проверить состояние репозитория | `git status` |
+| `git add README.md` | Добавить файл в индекс | `git add README.md` |
+| `git add .` | Добавить все изменения | `git add .` |
+| `git commit -m` | Создать коммит | `git commit -m "Первый коммит"` |
+| `git log` | Посмотреть историю коммитов | `git log` |
+| `git log --oneline` | Посмотреть краткую историю | `git log --oneline` |
+| `git branch` | Посмотреть ветки | `git branch` |
+| `git branch local` | Создать ветку | `git branch local` |
+| `git checkout local` | Перейти в ветку | `git checkout local` |
+| `git checkout -b global` | Создать ветку и перейти в нее | `git checkout -b global` |
+| `git merge local` | Слить ветку с текущей | `git merge local` |
+| `git remote add origin` | Добавить удаленный репозиторий | `git remote add origin ссылка` |
+| `git remote -v` | Посмотреть удаленные репозитории | `git remote -v` |
+| `git push` | Отправить изменения на GitHub | `git push origin main` |
+| `git pull` | Получить изменения с GitHub | `git pull origin main` |
+| `git fetch` | Получить изменения без слияния | `git fetch origin` |
+| `git clone` | Скачать репозиторий | `git clone ссылка` |
+
+---
+
+## 14. Вывод
+
+В ходе выполнения практической работы была разработана инструкция по работе с Git и GitHub. Инструкция оформлена в формате Markdown и содержит описание основных команд Git с примерами их использования.
+
+Были рассмотрены этапы создания учетной записи GitHub, установки Git, первоначальной настройки пользователя, создания локального репозитория, работы с файлами, коммитами и историей изменений.
+
+Также была описана работа с ветками. Для выполнения задания использовались ветки `main`, `local` и `global`. Ветка `main` содержала основную структуру документа, описание создания учетной записи GitHub и установку Git. Ветка `local` использовалась для описания команд локального Git. Ветка `global` использовалась для описания работы с удаленным репозиторием и форками.
+
+Итоговый вариант работы был получен путем слияния веток `local` и `global` в основную ветку `main`. После этого результат был отправлен на удаленный репозиторий GitHub.
+
+Таким образом, в ходе практической работы были закреплены навыки работы с Git, ветками, коммитами, удаленными репозиториями и сервисом GitHub.
